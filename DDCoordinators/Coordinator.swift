@@ -22,14 +22,6 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
     }
     
     /**
-     This **must** be overriden to return the `CoordinatorStartStrategy` of the specialised subclass. If this method is not overriden and this method accessed then a fatal error will occur.
-     - Returns: The `CoordinatorStartStrategy` that the app should employ when it begins
-     */
-    open func makeStartStrategy() -> CoordinatorStartStrategy {
-        fatalError("Method must be overriden")
-    }
-    
-    /**
      Called just before the coordinator will complete. This should be overriden to perform actions before the coordinator ends
     - Parameters:
         - data: The data that the coordinator will complete with
@@ -65,21 +57,12 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
         - animated: Whether or not the UI should be animated
      */
     internal func endUI(animated: Bool) {
-        
-        switch startStrategy {
-        case .viewController(let initialViewController):
-            switch presentingStrategy {
-            case .present:
-                self.navigationController?.dismiss(animated: animated)
-            case .pushNavigationController, .pushFromCoordinator:
-                self.navigationController?.popToViewController(initialViewController, animated: animated)
-                self.navigationController?.popViewController(animated: animated)
-            }
-        case .childCoordinator(_):
-            
-            // if this coordinator has delegated responsibility to a child coordinator then that child will
-            // have handled the UI state
-            break
+        switch endingStrategy {
+        case .dismiss:
+            self.navigationController?.dismiss(animated: animated)
+        case .pop:
+            guard let rootController = self.parent?.rootViewController else { return }
+            self.navigationController?.popToViewController(rootController, animated: animated)
         }
     }
     
@@ -117,38 +100,43 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
         // create navigation controller
         var navigationController: UINavigationController
         switch presentingStrategy {
-        case .present:
+        case .present, .none:
             navigationController = UINavigationController()
         case .pushNavigationController(navigationController: let navController):
             navigationController = navController
         case .pushFromCoordinator(let coordinator):
-            
-            // TODO Coordinator error
-            guard let passedNavController = coordinator.navigationController else { return }
-            navigationController = passedNavController
-        }
-        self.navigationController = navigationController
-        
-        // Display UI
-        switch self.startStrategy {
-        case .childCoordinator(let coordinator):
-            coordinator.start(animated: false, completion: nil)
-            
-        case .viewController(let initialViewController):
-        
-            switch presentingStrategy {
-            case .pushNavigationController, .pushFromCoordinator:
-                navigationController.pushViewController(initialViewController, animated: animated)
-            case .present(modalConfig: let config):
-                navigationController.pushViewController(initialViewController, animated: false)
-                config.presentingController.present(config.configureForPresentation(controller: navigationController),
-                                                    animated: animated,
-                                                    completion: completion)
+            if let navController = coordinator._strongNavigationController {
+                navigationController = navController
+            } else if let navController = coordinator.navigationController {
+                navigationController = navController
+            } else {
+                return
             }
         }
+            
+        self.endingStrategy = presentingStrategy?.endingStrategy ?? .dismiss
+        
+        self._strongNavigationController = navigationController
+        // Display UI
+        displayUI(animated: animated)
+            
+        // deallocate navController
+        self._strongNavigationController = nil
         
         didStart(animated: animated)
     }
+    
+    internal func displayUI(animated: Bool) {
+        
+    }
+    
+    public var rootViewController: UIViewController? {
+        return nil
+    }
+    
+    internal var endingStrategy: CoordinatorEndingStrategy = .dismiss
+    
+    public var _strongNavigationController: UINavigationController?
     
      //MARK: - Inintialisers
     /**
@@ -158,12 +146,11 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
         - presentingStrategy: The strategy used for presenting this view controller. This may not be used if the coordinator instantly delegates it's state to a child
         - completion: Run once the coordinator has completed and contains the output data if applicable
      */
-    public init(parent: AnyObject, presentingStrategy: CoordinatorPresentingStrategy, completed: CompletionBlock? = nil, cancelled: CancelBlock? = nil) {
+    public init(presentingStrategy: CoordinatorPresentingStrategy, completed: CompletionBlock? = nil, cancelled: CancelBlock? = nil) {
         
-        self.presentingStrategy = presentingStrategy
-        self.parent = parent
         self.completed = completed ?? { _ in }
         self.cancelled = cancelled ?? { }
+        self.presentingStrategy = presentingStrategy
         super.init()
     }
     
@@ -176,14 +163,6 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
         cancelled()
     }
     
-    public init(parent: AnyObject, navigationController: UINavigationController, completion: @escaping CompletionBlock, cancelled: @escaping CancelBlock) {
-        self.parent = parent
-        self.navigationController = navigationController
-        self.presentingStrategy = .pushNavigationController(navigationController)
-        self.completed = completion
-        self.cancelled = cancelled
-        super.init()
-    }
     
     
     // MARK: - Private Interface
@@ -191,22 +170,12 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
     /**
      This coordinators parent object
      */
-    private(set) var parent: AnyObject
+    public var parent: CoordinatorType?
     
-    /**
-     Defines how the coordinator's `initialViewController` is displayed
-     */
-    private var presentingStrategy: CoordinatorPresentingStrategy
+    // MARK: - Manually Managed in Memory    
+    internal var presentingStrategy: CoordinatorPresentingStrategy?
     
-    /**
-     Defines what happens  when the start method is called
-     */
-     internal private(set) lazy var startStrategy: CoordinatorStartStrategy = makeStartStrategy()
-    
-    /**
-     The initial navigation controller for this coordinator
-     */
-    public private(set) weak var navigationController: UINavigationController?
+    public var children: [WeakCoordinatorType] = []
     
     // MARK: - Supporting Types
     public typealias CompletionBlock = (DataOutput) -> Void
@@ -215,15 +184,4 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
 
 }
 
-/**
- A non generic coordinator base type for coordiantors.
- 
- All coordinators should conform to this protocol as all coordinators should conform to the `Coordinator` base class
- */
-public protocol CoordinatorType: AnyObject {
-    
-    func start(animated: Bool, completion: (()->Void)?)
-    
-    var navigationController: UINavigationController? { get }
 
-}

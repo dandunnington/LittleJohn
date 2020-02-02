@@ -49,7 +49,7 @@ open class ErroringCoordinator<DataOutput, CoordinatorError: Error>: Coordinator
     init(parent: AnyObject, presentingStrategy: CoordinatorPresentingStrategy, completed: CompletionBlock? = nil, cancelled: CancelBlock? = nil, errored: ErrorHandler? = nil) {
         
         self.errored = errored ?? { _ in }
-        super.init(parent: parent, presentingStrategy: presentingStrategy, completed: completed, cancelled: cancelled)
+        super.init(presentingStrategy: presentingStrategy, completed: completed, cancelled: cancelled)
     }
     
     // MARK: - Supporting Types

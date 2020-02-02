@@ -46,6 +46,7 @@ open class ViewModelledViewController<ViewModel: BaseViewModel>: UIViewControlle
     open func bindViewModel() {
         
     }
+    
 }
 
 open class BaseViewModel {

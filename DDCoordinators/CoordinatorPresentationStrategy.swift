@@ -33,6 +33,15 @@ public enum CoordinatorPresentingStrategy {
         )
     }
     
+    internal var endingStrategy: CoordinatorEndingStrategy {
+        switch self {
+        case .present:
+            return .dismiss
+        case .pushNavigationController, .pushFromCoordinator:
+            return .pop
+        }
+    }
+    
     /**
      The configuration struct for modally presented coordinators
      */
@@ -57,4 +66,9 @@ public enum CoordinatorPresentingStrategy {
             return controller
         }
     }
+}
+
+internal enum CoordinatorEndingStrategy {
+    case dismiss
+    case pop
 }
