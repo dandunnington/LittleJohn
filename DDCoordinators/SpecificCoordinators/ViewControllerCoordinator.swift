@@ -9,9 +9,12 @@
 import Foundation
 import UIKit
 
+/**
+ A `Coordinator` subclass that displays a specified view controller when started
+ */
 open class ViewControllerCoordinator<DataOutput>: Coordinator<DataOutput> {
     
-    open func makeRootViewController() -> UIViewController {
+    open func makeRootViewController() -> UIViewControllerType {
         fatalError("Root view controller must be overriden")
     }
     
@@ -25,9 +28,9 @@ open class ViewControllerCoordinator<DataOutput>: Coordinator<DataOutput> {
         
         switch presentingStrategy {
         case .pushNavigationController, .pushFromCoordinator:
-            strongNavController.pushViewController(viewController, animated: animated)
+            strongNavController.pushViewControllerType(viewController, animated: animated)
         case .present(modalConfig: let config):
-            strongNavController.pushViewController(viewController, animated: false)
+            strongNavController.pushViewControllerType(viewController, animated: false)
             config.presentingController.present(config.configureForPresentation(controller: strongNavController), animated: animated)
         case .none: break
         }
@@ -36,7 +39,7 @@ open class ViewControllerCoordinator<DataOutput>: Coordinator<DataOutput> {
         
     }
     
-    override public final var rootViewController: UIViewController? {
+    override public final var rootViewController: UIViewControllerType? {
         return initialViewController
     }
     
@@ -44,7 +47,7 @@ open class ViewControllerCoordinator<DataOutput>: Coordinator<DataOutput> {
      Defines how the coordinator's `initialViewController` is displayed
      */
     
-    private weak var initialViewController: UIViewController?
+    private weak var initialViewController: UIViewControllerType?
     
     
 }

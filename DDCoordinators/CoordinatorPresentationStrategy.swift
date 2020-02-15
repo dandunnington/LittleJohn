@@ -48,7 +48,7 @@ public enum CoordinatorPresentingStrategy {
     public struct ModalConfiguration {
         
         /// The `UIViewController` to present the coordinator from
-        let presentingController: UIViewController
+        let presentingController: UIViewControllerType
         
         /// The style to use when presenting the coordinator
         let presentationStyle: UIModalPresentationStyle
@@ -59,7 +59,7 @@ public enum CoordinatorPresentingStrategy {
         /**
          Configures the given view controller using this objects properties
          */
-        func configureForPresentation(controller: UIViewController) -> UIViewController {
+        func configureForPresentation(controller: UIViewControllerType) -> UIViewControllerType {
             controller.definesPresentationContext = true
             controller.modalTransitionStyle = transitionStyle
             controller.modalPresentationStyle = presentationStyle

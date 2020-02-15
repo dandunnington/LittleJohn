@@ -25,7 +25,7 @@ open class DelegatingCoordinator<DataOutput>: Coordinator<DataOutput> {
         delegatingCoordinator = coordinator
     }
     
-    override public var rootViewController: UIViewController? {
+    override public var rootViewController: UIViewControllerType? {
         return delegatingCoordinator?.rootViewController
     }
     
