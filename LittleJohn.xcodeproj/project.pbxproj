@@ -19,6 +19,7 @@
 		B8A1DD9D23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1DD9C23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift */; };
 		B8A1DDA023E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1DD9F23E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift */; };
 		B8A3343423F88C09009609F8 /* ViewModelledViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A3343223F88A6C009609F8 /* ViewModelledViewControllerCoordinator.swift */; };
+		B8AD1E4223F9BECE00627400 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B8AD1E4123F9BECE00627400 /* logo.png */; };
 		B8C4127523F85C8F00B3E794 /* ViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4127423F85C8F00B3E794 /* ViewControllerMock.swift */; };
 		B8C4127723F85F0A00B3E794 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4127623F85F0A00B3E794 /* NavigationControllerMock.swift */; };
 		B8DF10AC23B26BD600FB8031 /* DDCoordinators.h in Headers */ = {isa = PBXBuildFile; fileRef = B8DF10AA23B26BD600FB8031 /* DDCoordinators.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,6 +52,7 @@
 		B8A1DD9C23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCoordinatorTests.swift; sourceTree = "<group>"; };
 		B8A1DD9F23E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseIntCoordinatorConceteClass.swift; sourceTree = "<group>"; };
 		B8A3343223F88A6C009609F8 /* ViewModelledViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelledViewControllerCoordinator.swift; sourceTree = "<group>"; };
+		B8AD1E4123F9BECE00627400 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		B8C4127423F85C8F00B3E794 /* ViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMock.swift; sourceTree = "<group>"; };
 		B8C4127623F85F0A00B3E794 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
 		B8DF10A723B26BD600FB8031 /* LittleJohn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LittleJohn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F86A5023F9A1B60073265E /* README.md */,
+				B8AD1E4123F9BECE00627400 /* logo.png */,
 				B8DF10A923B26BD600FB8031 /* DDCoordinators */,
 				B897960E23C10DB80040ED99 /* DDCoordinatorsTests */,
 				B8DF10A823B26BD600FB8031 /* Products */,
@@ -265,6 +268,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8AD1E4223F9BECE00627400 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
