@@ -133,6 +133,7 @@
 		B8DF109D23B26BD600FB8031 = {
 			isa = PBXGroup;
 			children = (
+				B8F86A5023F9A1B60073265E /* README.md */,
 				B8DF10A923B26BD600FB8031 /* DDCoordinators */,
 				B897960E23C10DB80040ED99 /* DDCoordinatorsTests */,
 				B8DF10A823B26BD600FB8031 /* Products */,
@@ -151,7 +152,6 @@
 		B8DF10A923B26BD600FB8031 /* DDCoordinators */ = {
 			isa = PBXGroup;
 			children = (
-				B8F86A5023F9A1B60073265E /* README.md */,
 				B870692F23F84DBE00FFD8BB /* Types */,
 				B87EC45C23E22DB00066AEC0 /* SpecificCoordinators */,
 				B8DF10AA23B26BD600FB8031 /* DDCoordinators.h */,
