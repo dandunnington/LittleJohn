@@ -1,4 +1,4 @@
-![Little John](https://raw.githubusercontent.com/Alamofire/Alamofire/master/alamofire.png)
+# Little John
 
 A general purpose iOS Swift coordinator framework that solves the deallocation problem, plays nicely with UIKit along with other features to minimise boiler plate code.
 
