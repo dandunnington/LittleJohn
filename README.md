@@ -2,7 +2,7 @@
 
 A general purpose iOS Swift coordinator framework that solves the deallocation problem, plays nicely with UIKit along with other features to minimise boiler plate code.
 
-Example app available at : https://github.com/dandunnington/DDCoordinatorExampleApp
+Example app available at: https://github.com/dandunnington/Pizzr
 
 ## Features
 - Coordinators will deallocate themselves when their associated view controllers have been deallocated (eg. popped off a UINavgiationController view controller stack)
