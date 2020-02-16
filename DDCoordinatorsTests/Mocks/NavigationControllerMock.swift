@@ -1,6 +1,6 @@
 //
 //  NavigationControllerMock.swift
-//  DDCoordinatorsTests
+//  LittleJohnTests
 //
 //  Created by Dan Dunnington on 15/02/2020.
 //  Copyright © 2020 Dan Dunnington. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-@testable import DDCoordinators
+@testable import LittleJohn
 
 class NavigationControllerMock: ViewControllerMock, UINavigationControllerType {
     

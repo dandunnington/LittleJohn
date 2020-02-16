@@ -14,7 +14,7 @@
 		B897960623C10D340040ED99 /* ErroringCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897960223C10D340040ED99 /* ErroringCoordinator.swift */; };
 		B897960723C10D340040ED99 /* CoordinatorPresentationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897960323C10D340040ED99 /* CoordinatorPresentationStrategy.swift */; };
 		B897960823C10D340040ED99 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897960423C10D340040ED99 /* Coordinator.swift */; };
-		B897961223C10DB80040ED99 /* DDCoordinators.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DF10A723B26BD600FB8031 /* DDCoordinators.framework */; };
+		B897961223C10DB80040ED99 /* LittleJohn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DF10A723B26BD600FB8031 /* LittleJohn.framework */; };
 		B897965223C2371E0040ED99 /* ViewModelledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897965123C2371E0040ED99 /* ViewModelledViewController.swift */; };
 		B8A1DD9D23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1DD9C23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift */; };
 		B8A1DDA023E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1DD9F23E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift */; };
@@ -45,7 +45,7 @@
 		B897960223C10D340040ED99 /* ErroringCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErroringCoordinator.swift; sourceTree = "<group>"; };
 		B897960323C10D340040ED99 /* CoordinatorPresentationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorPresentationStrategy.swift; sourceTree = "<group>"; };
 		B897960423C10D340040ED99 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		B897960D23C10DB80040ED99 /* DDCoordinatorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DDCoordinatorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B897960D23C10DB80040ED99 /* LittleJohnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LittleJohnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B897961123C10DB80040ED99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B897965123C2371E0040ED99 /* ViewModelledViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelledViewController.swift; sourceTree = "<group>"; };
 		B8A1DD9C23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCoordinatorTests.swift; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		B8A3343223F88A6C009609F8 /* ViewModelledViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelledViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		B8C4127423F85C8F00B3E794 /* ViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMock.swift; sourceTree = "<group>"; };
 		B8C4127623F85F0A00B3E794 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
-		B8DF10A723B26BD600FB8031 /* DDCoordinators.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DDCoordinators.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8DF10A723B26BD600FB8031 /* LittleJohn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LittleJohn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DF10AA23B26BD600FB8031 /* DDCoordinators.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCoordinators.h; sourceTree = "<group>"; };
 		B8DF10AB23B26BD600FB8031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8F86A4823F983310073265E /* MockCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinatorType.swift; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B897961223C10DB80040ED99 /* DDCoordinators.framework in Frameworks */,
+				B897961223C10DB80040ED99 /* LittleJohn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,8 +143,8 @@
 		B8DF10A823B26BD600FB8031 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8DF10A723B26BD600FB8031 /* DDCoordinators.framework */,
-				B897960D23C10DB80040ED99 /* DDCoordinatorsTests.xctest */,
+				B8DF10A723B26BD600FB8031 /* LittleJohn.framework */,
+				B897960D23C10DB80040ED99 /* LittleJohnTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,9 +179,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B897960C23C10DB80040ED99 /* DDCoordinatorsTests */ = {
+		B897960C23C10DB80040ED99 /* LittleJohnTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B897961523C10DB80040ED99 /* Build configuration list for PBXNativeTarget "DDCoordinatorsTests" */;
+			buildConfigurationList = B897961523C10DB80040ED99 /* Build configuration list for PBXNativeTarget "LittleJohnTests" */;
 			buildPhases = (
 				B897960923C10DB80040ED99 /* Sources */,
 				B897960A23C10DB80040ED99 /* Frameworks */,
@@ -192,14 +192,14 @@
 			dependencies = (
 				B897961423C10DB80040ED99 /* PBXTargetDependency */,
 			);
-			name = DDCoordinatorsTests;
+			name = LittleJohnTests;
 			productName = DDCoordinatorsTests;
-			productReference = B897960D23C10DB80040ED99 /* DDCoordinatorsTests.xctest */;
+			productReference = B897960D23C10DB80040ED99 /* LittleJohnTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B8DF10A623B26BD600FB8031 /* DDCoordinators */ = {
+		B8DF10A623B26BD600FB8031 /* LittleJohn */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B8DF10AF23B26BD600FB8031 /* Build configuration list for PBXNativeTarget "DDCoordinators" */;
+			buildConfigurationList = B8DF10AF23B26BD600FB8031 /* Build configuration list for PBXNativeTarget "LittleJohn" */;
 			buildPhases = (
 				B8DF10A223B26BD600FB8031 /* Headers */,
 				B8DF10A323B26BD600FB8031 /* Sources */,
@@ -210,9 +210,9 @@
 			);
 			dependencies = (
 			);
-			name = DDCoordinators;
+			name = LittleJohn;
 			productName = DDCoordinators;
-			productReference = B8DF10A723B26BD600FB8031 /* DDCoordinators.framework */;
+			productReference = B8DF10A723B26BD600FB8031 /* LittleJohn.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -234,7 +234,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B8DF10A123B26BD600FB8031 /* Build configuration list for PBXProject "DDCoordinators" */;
+			buildConfigurationList = B8DF10A123B26BD600FB8031 /* Build configuration list for PBXProject "LittleJohn" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -247,8 +247,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B8DF10A623B26BD600FB8031 /* DDCoordinators */,
-				B897960C23C10DB80040ED99 /* DDCoordinatorsTests */,
+				B8DF10A623B26BD600FB8031 /* LittleJohn */,
+				B897960C23C10DB80040ED99 /* LittleJohnTests */,
 			);
 		};
 /* End PBXProject section */
@@ -306,7 +306,7 @@
 /* Begin PBXTargetDependency section */
 		B897961423C10DB80040ED99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B8DF10A623B26BD600FB8031 /* DDCoordinators */;
+			target = B8DF10A623B26BD600FB8031 /* LittleJohn */;
 			targetProxy = B897961323C10DB80040ED99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -486,7 +486,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dandunnington.DDCoordinators;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = LittleJohn;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -512,7 +512,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dandunnington.DDCoordinators;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = LittleJohn;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -522,7 +522,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B897961523C10DB80040ED99 /* Build configuration list for PBXNativeTarget "DDCoordinatorsTests" */ = {
+		B897961523C10DB80040ED99 /* Build configuration list for PBXNativeTarget "LittleJohnTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B897961623C10DB80040ED99 /* Debug */,
@@ -531,7 +531,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8DF10A123B26BD600FB8031 /* Build configuration list for PBXProject "DDCoordinators" */ = {
+		B8DF10A123B26BD600FB8031 /* Build configuration list for PBXProject "LittleJohn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8DF10AD23B26BD600FB8031 /* Debug */,
@@ -540,7 +540,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B8DF10AF23B26BD600FB8031 /* Build configuration list for PBXNativeTarget "DDCoordinators" */ = {
+		B8DF10AF23B26BD600FB8031 /* Build configuration list for PBXNativeTarget "LittleJohn" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B8DF10B023B26BD600FB8031 /* Debug */,

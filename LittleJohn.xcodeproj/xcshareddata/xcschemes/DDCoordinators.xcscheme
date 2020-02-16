@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B8DF10A623B26BD600FB8031"
-               BuildableName = "DDCoordinators.framework"
-               BlueprintName = "DDCoordinators"
-               ReferencedContainer = "container:DDCoordinators.xcodeproj">
+               BuildableName = "LittleJohn.framework"
+               BlueprintName = "LittleJohn"
+               ReferencedContainer = "container:LittleJohn.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B897960C23C10DB80040ED99"
-               BuildableName = "DDCoordinatorsTests.xctest"
-               BlueprintName = "DDCoordinatorsTests"
-               ReferencedContainer = "container:DDCoordinators.xcodeproj">
+               BuildableName = "LittleJohnTests.xctest"
+               BlueprintName = "LittleJohnTests"
+               ReferencedContainer = "container:LittleJohn.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B8DF10A623B26BD600FB8031"
-            BuildableName = "DDCoordinators.framework"
-            BlueprintName = "DDCoordinators"
-            ReferencedContainer = "container:DDCoordinators.xcodeproj">
+            BuildableName = "LittleJohn.framework"
+            BlueprintName = "LittleJohn"
+            ReferencedContainer = "container:LittleJohn.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

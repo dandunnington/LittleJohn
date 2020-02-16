@@ -1,6 +1,6 @@
 //
 //  ViewModelledViewControllerCoordinator.swift
-//  DDCoordinators
+//  LittleJohn
 //
 //  Created by Dan Dunnington on 15/02/2020.
 //  Copyright © 2020 Dan Dunnington. All rights reserved.

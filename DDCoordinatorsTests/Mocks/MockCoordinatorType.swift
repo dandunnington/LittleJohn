@@ -1,13 +1,13 @@
 //
 //  MockCoordinatorType.swift
-//  DDCoordinatorsTests
+//  LittleJohnTests
 //
 //  Created by Dan Dunnington on 16/02/2020.
 //  Copyright © 2020 Dan Dunnington. All rights reserved.
 //
 
 import Foundation
-@testable import DDCoordinators
+@testable import LittleJohn
 
 class MockCoordinatorType: CoordinatorType {
     

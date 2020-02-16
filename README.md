@@ -1,4 +1,4 @@
-#  DDCoordinators (Find better name)
+#  LittleJohn
 
 A general purpose iOS Swift coordinator framework that solves the deallocation problem, plays nicely with UIKit along with other features to minimise boiler plate code.
 

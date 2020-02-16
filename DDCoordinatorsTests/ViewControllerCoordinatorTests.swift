@@ -1,6 +1,6 @@
 //
-//  DDCoordinatorsTests.swift
-//  DDCoordinatorsTests
+//  LittleJohnTests.swift
+//  LittleJohnTests
 //
 //  Created by Dan Dunnington on 04/01/2020.
 //  Copyright © 2020 Dan Dunnington. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 import UIKit
-@testable import DDCoordinators
+@testable import LittleJohn
 
 class ViewControllerCoordinatorTests: XCTestCase {
         

@@ -1,13 +1,13 @@
 //
 //  ViewControllerMock.swift
-//  DDCoordinatorsTests
+//  LittleJohnTests
 //
 //  Created by Dan Dunnington on 15/02/2020.
 //  Copyright © 2020 Dan Dunnington. All rights reserved.
 //
 
 import Foundation
-@testable import DDCoordinators
+@testable import LittleJohn
 import UIKit
 
 class ViewControllerMock: UIViewControllerType {
