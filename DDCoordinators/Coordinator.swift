@@ -178,6 +178,8 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
         didStart(animated: animated)
     }
 
+    /// A temporary strong navigation controller. This is used to retain a navigation controller before it has been put in the view hierachy
+    /// This is deallocated at the end of the start method so will most of the time be nil to avoid retain cycles
     public var _strongNavigationController: UINavigationControllerType?
     
     /**

@@ -28,10 +28,6 @@ class ViewControllerIntCoordinator: ViewControllerCoordinator<Int> {
         didStartLastAnimated = animated
     }
     
-    override func displayUI(animated: Bool) {
-        displayUICalledValue = animated
-    }
-    
     override func willCancel(animated: Bool) {
         willCancelAnimated = animated
     }

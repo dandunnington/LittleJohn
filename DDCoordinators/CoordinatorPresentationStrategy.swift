@@ -17,7 +17,7 @@ public enum CoordinatorPresentingStrategy {
     /// The coordinators navigation controller is presented on top of its parent's view controller
     case present(modalConfig: ModalConfiguration)
     
-    case pushNavigationController(_: UINavigationController)
+    case pushNavigationController(_: UINavigationControllerType)
     
     case pushFromCoordinator(_: CoordinatorType)
     

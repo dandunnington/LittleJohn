@@ -23,8 +23,10 @@ class NavigationControllerMock: ViewControllerMock, UINavigationControllerType {
     // MARK: - Conformance
     func pushViewControllerType(_ viewController: UIViewControllerType, animated: Bool) {
         
-        viewControllers.append(viewController)
+        // ideally we would set the navigationControllerType property of viewController
+        // however if I try to do this I get a segmentation fault when trying to compile
         
+        viewControllers.append(viewController)
         lastPushViewControllerType = PushControllerType(viewController: viewController, animated: animated)
     }
     

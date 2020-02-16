@@ -18,9 +18,13 @@
 		B897965223C2371E0040ED99 /* ViewModelledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897965123C2371E0040ED99 /* ViewModelledViewController.swift */; };
 		B8A1DD9D23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1DD9C23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift */; };
 		B8A1DDA023E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A1DD9F23E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift */; };
+		B8A3343423F88C09009609F8 /* ViewModelledViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A3343223F88A6C009609F8 /* ViewModelledViewControllerCoordinator.swift */; };
 		B8C4127523F85C8F00B3E794 /* ViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4127423F85C8F00B3E794 /* ViewControllerMock.swift */; };
 		B8C4127723F85F0A00B3E794 /* NavigationControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4127623F85F0A00B3E794 /* NavigationControllerMock.swift */; };
 		B8DF10AC23B26BD600FB8031 /* DDCoordinators.h in Headers */ = {isa = PBXBuildFile; fileRef = B8DF10AA23B26BD600FB8031 /* DDCoordinators.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8F86A4923F983310073265E /* MockCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F86A4823F983310073265E /* MockCoordinatorType.swift */; };
+		B8F86A4D23F994090073265E /* BaseCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F86A4C23F994090073265E /* BaseCoordinatorTests.swift */; };
+		B8F86A4F23F998690073265E /* CoordinatorPresentationStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F86A4E23F998690073265E /* CoordinatorPresentationStrategyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +50,16 @@
 		B897965123C2371E0040ED99 /* ViewModelledViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelledViewController.swift; sourceTree = "<group>"; };
 		B8A1DD9C23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCoordinatorTests.swift; sourceTree = "<group>"; };
 		B8A1DD9F23E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseIntCoordinatorConceteClass.swift; sourceTree = "<group>"; };
+		B8A3343223F88A6C009609F8 /* ViewModelledViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelledViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		B8C4127423F85C8F00B3E794 /* ViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMock.swift; sourceTree = "<group>"; };
 		B8C4127623F85F0A00B3E794 /* NavigationControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerMock.swift; sourceTree = "<group>"; };
 		B8DF10A723B26BD600FB8031 /* DDCoordinators.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DDCoordinators.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8DF10AA23B26BD600FB8031 /* DDCoordinators.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDCoordinators.h; sourceTree = "<group>"; };
 		B8DF10AB23B26BD600FB8031 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8F86A4823F983310073265E /* MockCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinatorType.swift; sourceTree = "<group>"; };
+		B8F86A4C23F994090073265E /* BaseCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinatorTests.swift; sourceTree = "<group>"; };
+		B8F86A4E23F998690073265E /* CoordinatorPresentationStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorPresentationStrategyTests.swift; sourceTree = "<group>"; };
+		B8F86A5023F9A1B60073265E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +94,7 @@
 			children = (
 				B87EC45A23E22D410066AEC0 /* DelegatingCoordinator.swift */,
 				B87EC45D23E22E130066AEC0 /* ViewControllerCoordinator.swift */,
+				B8A3343223F88A6C009609F8 /* ViewModelledViewControllerCoordinator.swift */,
 			);
 			path = SpecificCoordinators;
 			sourceTree = "<group>";
@@ -96,6 +106,8 @@
 				B8A1DD9E23E73EB200245D1F /* ConcreteClasses */,
 				B897961123C10DB80040ED99 /* Info.plist */,
 				B8A1DD9C23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift */,
+				B8F86A4C23F994090073265E /* BaseCoordinatorTests.swift */,
+				B8F86A4E23F998690073265E /* CoordinatorPresentationStrategyTests.swift */,
 			);
 			path = DDCoordinatorsTests;
 			sourceTree = "<group>";
@@ -113,6 +125,7 @@
 			children = (
 				B8C4127423F85C8F00B3E794 /* ViewControllerMock.swift */,
 				B8C4127623F85F0A00B3E794 /* NavigationControllerMock.swift */,
+				B8F86A4823F983310073265E /* MockCoordinatorType.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -138,6 +151,7 @@
 		B8DF10A923B26BD600FB8031 /* DDCoordinators */ = {
 			isa = PBXGroup;
 			children = (
+				B8F86A5023F9A1B60073265E /* README.md */,
 				B870692F23F84DBE00FFD8BB /* Types */,
 				B87EC45C23E22DB00066AEC0 /* SpecificCoordinators */,
 				B8DF10AA23B26BD600FB8031 /* DDCoordinators.h */,
@@ -263,8 +277,11 @@
 			files = (
 				B8C4127523F85C8F00B3E794 /* ViewControllerMock.swift in Sources */,
 				B8A1DDA023E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift in Sources */,
+				B8F86A4F23F998690073265E /* CoordinatorPresentationStrategyTests.swift in Sources */,
 				B8C4127723F85F0A00B3E794 /* NavigationControllerMock.swift in Sources */,
 				B8A1DD9D23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift in Sources */,
+				B8F86A4923F983310073265E /* MockCoordinatorType.swift in Sources */,
+				B8F86A4D23F994090073265E /* BaseCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A3343423F88C09009609F8 /* ViewModelledViewControllerCoordinator.swift in Sources */,
 				B897960823C10D340040ED99 /* Coordinator.swift in Sources */,
 				B897965223C2371E0040ED99 /* ViewModelledViewController.swift in Sources */,
 				B897960623C10D340040ED99 /* ErroringCoordinator.swift in Sources */,
