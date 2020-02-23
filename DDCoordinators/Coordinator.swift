@@ -128,6 +128,8 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
         case .pop:
             guard let rootController = self.parent?.rootViewController else { return }
             self.navigationController?.popToViewControllerType(rootController, animated: animated)
+        case .none:
+            break
         }
     }
     
@@ -153,7 +155,7 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
         // create navigation controller
         var navigationController: UINavigationControllerType
         switch presentingStrategy {
-        case .present, .none:
+        case .present, .tab, .none:
             navigationController = createNavController()
         case .pushNavigationController(navigationController: let navController):
             navigationController = navController
@@ -172,10 +174,20 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
         displayUI(animated: animated)
             
         // deallocate navController and presenting strategy
-        self._strongNavigationController = nil
+        switch presentingStrategy {
+        case .tab:
+            break
+        default:
+            self._strongNavigationController = nil
+        }
+        
         self.presentingStrategy = nil
         
         didStart(animated: animated)
+    }
+    
+    final public func deallocateStrongNavController() {
+        self._strongNavigationController = nil
     }
 
     /// A temporary strong navigation controller. This is used to retain a navigation controller before it has been put in the view hierachy
@@ -194,4 +206,6 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
 
 }
 
-
+/// Issues in Xcode compiler when using Void for specialising coordinators that do not return anything (abort trap 6)
+/// This should be used instead of Void
+public typealias NoReturn = Bool

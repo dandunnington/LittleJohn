@@ -27,7 +27,7 @@ open class ViewControllerCoordinator<DataOutput>: Coordinator<DataOutput> {
         }
         
         switch presentingStrategy {
-        case .pushNavigationController, .pushFromCoordinator:
+        case .pushNavigationController, .pushFromCoordinator, .tab:
             strongNavController.pushViewControllerType(viewController, animated: animated)
         case .present(modalConfig: let config):
             strongNavController.pushViewControllerType(viewController, animated: false)

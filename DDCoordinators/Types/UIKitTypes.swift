@@ -40,6 +40,14 @@ public protocol UIViewControllerType: class {
     
     func dismiss(animated: Bool, completion: (() -> Void)?)
     
+    var tabBarItem: UITabBarItem! { get set }
+    
+}
+
+public protocol UITabBarControllerType: UIViewControllerType {
+    
+    func setViewControllers(_ viewControllers: [UIViewControllerType])
+    
 }
 
 extension UIViewControllerType {
@@ -76,4 +84,11 @@ extension UIViewController: UIViewControllerType {
         return navigationController
     }
     
+}
+
+extension UITabBarController: UITabBarControllerType {
+    public func setViewControllers(_ viewControllers: [UIViewControllerType]) {
+        self.setViewControllers(viewControllers.compactMap { $0 as? UIViewController},
+                                animated: false)
+    }
 }

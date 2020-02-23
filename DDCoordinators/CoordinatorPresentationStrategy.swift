@@ -21,6 +21,8 @@ public enum CoordinatorPresentingStrategy {
     
     case pushFromCoordinator(_: CoordinatorType)
     
+    case tab
+    
     init(presentedByParent parent: CoordinatorType, transitionStyle: UIModalTransitionStyle, presentationStyle: UIModalPresentationStyle) {
         
         guard let presentingController = parent.navigationController else {
@@ -39,6 +41,8 @@ public enum CoordinatorPresentingStrategy {
             return .dismiss
         case .pushNavigationController, .pushFromCoordinator:
             return .pop
+        case .tab:
+            return .none
         }
     }
     
@@ -71,4 +75,5 @@ public enum CoordinatorPresentingStrategy {
 internal enum CoordinatorEndingStrategy {
     case dismiss
     case pop
+    case none
 }

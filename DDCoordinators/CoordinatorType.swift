@@ -23,6 +23,8 @@ public protocol CoordinatorType: class {
     var rootViewController: UIViewControllerType? { get }
     
     var _strongNavigationController: UINavigationControllerType? { get }
+    
+    func deallocateStrongNavController()
 }
 
 extension CoordinatorType {
@@ -38,6 +40,11 @@ public extension CoordinatorType {
         child.parent = self
         child.start(animated: animated, completion: nil)
         return child
+    }
+    
+    func startChildType(animated: Bool, _ child: CoordinatorType) {
+        child.parent = self
+        child.start(animated: animated, completion: nil)
     }
     
 }
