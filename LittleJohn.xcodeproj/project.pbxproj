@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B870693123F84DCC00FFD8BB /* UIKitTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B870693023F84DCC00FFD8BB /* UIKitTypes.swift */; };
+		B879D0F3240719EA009C446E /* CoordinatorRetainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879D0F2240719EA009C446E /* CoordinatorRetainTests.swift */; };
+		B879D0FC24071EA3009C446E /* ViewModelledViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879D0FB24071EA3009C446E /* ViewModelledViewControllerType.swift */; };
+		B879D10024072259009C446E /* ViewModelledViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879D0FF24072259009C446E /* ViewModelledViewControllerMock.swift */; };
 		B87EC45B23E22D410066AEC0 /* DelegatingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EC45A23E22D410066AEC0 /* DelegatingCoordinator.swift */; };
 		B87EC45E23E22E130066AEC0 /* ViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EC45D23E22E130066AEC0 /* ViewControllerCoordinator.swift */; };
 		B8871E1923E5AEF20006F69C /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8871E1823E5AEF20006F69C /* CoordinatorType.swift */; };
 		B88F1C822402E9E500EDB090 /* NoNavBarTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F1C812402E9E500EDB090 /* NoNavBarTabController.swift */; };
+		B88F1C8724044F5B00EDB090 /* TabCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F1C8524044F4B00EDB090 /* TabCoordinatorTests.swift */; };
+		B88F1C892404518700EDB090 /* ConcreteTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F1C8324044E1100EDB090 /* ConcreteTabCoordinator.swift */; };
+		B88F1C8C24046CAE00EDB090 /* MockTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F1C8A240452EE00EDB090 /* MockTabBarController.swift */; };
 		B897960623C10D340040ED99 /* ErroringCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897960223C10D340040ED99 /* ErroringCoordinator.swift */; };
 		B897960723C10D340040ED99 /* CoordinatorPresentationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897960323C10D340040ED99 /* CoordinatorPresentationStrategy.swift */; };
 		B897960823C10D340040ED99 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897960423C10D340040ED99 /* Coordinator.swift */; };
@@ -41,10 +47,16 @@
 
 /* Begin PBXFileReference section */
 		B870693023F84DCC00FFD8BB /* UIKitTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitTypes.swift; sourceTree = "<group>"; };
+		B879D0F2240719EA009C446E /* CoordinatorRetainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorRetainTests.swift; sourceTree = "<group>"; };
+		B879D0FB24071EA3009C446E /* ViewModelledViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelledViewControllerType.swift; sourceTree = "<group>"; };
+		B879D0FF24072259009C446E /* ViewModelledViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelledViewControllerMock.swift; sourceTree = "<group>"; };
 		B87EC45A23E22D410066AEC0 /* DelegatingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatingCoordinator.swift; sourceTree = "<group>"; };
 		B87EC45D23E22E130066AEC0 /* ViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		B8871E1823E5AEF20006F69C /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		B88F1C812402E9E500EDB090 /* NoNavBarTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNavBarTabController.swift; sourceTree = "<group>"; };
+		B88F1C8324044E1100EDB090 /* ConcreteTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteTabCoordinator.swift; sourceTree = "<group>"; };
+		B88F1C8524044F4B00EDB090 /* TabCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorTests.swift; sourceTree = "<group>"; };
+		B88F1C8A240452EE00EDB090 /* MockTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTabBarController.swift; sourceTree = "<group>"; };
 		B897960223C10D340040ED99 /* ErroringCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErroringCoordinator.swift; sourceTree = "<group>"; };
 		B897960323C10D340040ED99 /* CoordinatorPresentationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorPresentationStrategy.swift; sourceTree = "<group>"; };
 		B897960423C10D340040ED99 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -89,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				B870693023F84DCC00FFD8BB /* UIKitTypes.swift */,
+				B879D0FB24071EA3009C446E /* ViewModelledViewControllerType.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -113,6 +126,8 @@
 				B8A1DD9C23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift */,
 				B8F86A4C23F994090073265E /* BaseCoordinatorTests.swift */,
 				B8F86A4E23F998690073265E /* CoordinatorPresentationStrategyTests.swift */,
+				B88F1C8524044F4B00EDB090 /* TabCoordinatorTests.swift */,
+				B879D0F2240719EA009C446E /* CoordinatorRetainTests.swift */,
 			);
 			path = DDCoordinatorsTests;
 			sourceTree = "<group>";
@@ -121,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				B8A1DD9F23E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift */,
+				B88F1C8324044E1100EDB090 /* ConcreteTabCoordinator.swift */,
 			);
 			path = ConcreteClasses;
 			sourceTree = "<group>";
@@ -131,6 +147,8 @@
 				B8C4127423F85C8F00B3E794 /* ViewControllerMock.swift */,
 				B8C4127623F85F0A00B3E794 /* NavigationControllerMock.swift */,
 				B8F86A4823F983310073265E /* MockCoordinatorType.swift */,
+				B88F1C8A240452EE00EDB090 /* MockTabBarController.swift */,
+				B879D0FF24072259009C446E /* ViewModelledViewControllerMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -281,8 +299,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B88F1C892404518700EDB090 /* ConcreteTabCoordinator.swift in Sources */,
+				B88F1C8C24046CAE00EDB090 /* MockTabBarController.swift in Sources */,
 				B8C4127523F85C8F00B3E794 /* ViewControllerMock.swift in Sources */,
+				B879D0F3240719EA009C446E /* CoordinatorRetainTests.swift in Sources */,
 				B8A1DDA023E73EEB00245D1F /* BaseIntCoordinatorConceteClass.swift in Sources */,
+				B879D10024072259009C446E /* ViewModelledViewControllerMock.swift in Sources */,
+				B88F1C8724044F5B00EDB090 /* TabCoordinatorTests.swift in Sources */,
 				B8F86A4F23F998690073265E /* CoordinatorPresentationStrategyTests.swift in Sources */,
 				B8C4127723F85F0A00B3E794 /* NavigationControllerMock.swift in Sources */,
 				B8A1DD9D23E73E3B00245D1F /* ViewControllerCoordinatorTests.swift in Sources */,
@@ -304,6 +327,7 @@
 				B87EC45E23E22E130066AEC0 /* ViewControllerCoordinator.swift in Sources */,
 				B897960723C10D340040ED99 /* CoordinatorPresentationStrategy.swift in Sources */,
 				B87EC45B23E22D410066AEC0 /* DelegatingCoordinator.swift in Sources */,
+				B879D0FC24071EA3009C446E /* ViewModelledViewControllerType.swift in Sources */,
 				B870693123F84DCC00FFD8BB /* UIKitTypes.swift in Sources */,
 				B8871E1923E5AEF20006F69C /* CoordinatorType.swift in Sources */,
 			);

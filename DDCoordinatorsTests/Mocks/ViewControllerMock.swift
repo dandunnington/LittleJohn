@@ -24,6 +24,8 @@ class ViewControllerMock: UIViewControllerType {
     
     var modalPresentationStyle: UIModalPresentationStyle = .automatic
     
+    var tabBarItem: UITabBarItem!
+    
     func present(_ viewControllerToPresent: UIViewControllerType, animated: Bool, completion: (() -> Void)?) {
         present = Present(viewControllerToPresent: viewControllerToPresent, animated: animated, completion: completion)
     }

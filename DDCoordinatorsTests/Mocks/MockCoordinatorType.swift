@@ -16,6 +16,11 @@ class MockCoordinatorType: CoordinatorType {
         lastStartCall = Start(animated: animated, completion: completion)
     }
     
+    var deallocateStrongNavCalled = false
+    func deallocateStrongNavController() {
+        deallocateStrongNavCalled = true
+    }
+    
     var parent: CoordinatorType?
     
     var rootViewController: UIViewControllerType?
