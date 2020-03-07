@@ -14,7 +14,7 @@ import UIKit
  
  All coordinators should conform to this protocol as all coordinators should conform to the `Coordinator` base class
  */
-public protocol CoordinatorType: class {
+public protocol CoordinatorType: AnyObject {
     
     func start(animated: Bool, completion: (()->Void)?)
         

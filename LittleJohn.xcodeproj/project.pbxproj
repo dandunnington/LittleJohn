@@ -11,6 +11,9 @@
 		B879D0F3240719EA009C446E /* CoordinatorRetainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879D0F2240719EA009C446E /* CoordinatorRetainTests.swift */; };
 		B879D0FC24071EA3009C446E /* ViewModelledViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879D0FB24071EA3009C446E /* ViewModelledViewControllerType.swift */; };
 		B879D10024072259009C446E /* ViewModelledViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B879D0FF24072259009C446E /* ViewModelledViewControllerMock.swift */; };
+		B87C34B9240D9E0400C04C94 /* NotificationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87C34B8240D9E0400C04C94 /* NotificationPath.swift */; };
+		B87C34BB240D9EF700C04C94 /* CoordinatorIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87C34BA240D9EF700C04C94 /* CoordinatorIdentifier.swift */; };
+		B87C34BF241447D000C04C94 /* AppCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87C34BE241447D000C04C94 /* AppCoordinatorType.swift */; };
 		B87EC45B23E22D410066AEC0 /* DelegatingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EC45A23E22D410066AEC0 /* DelegatingCoordinator.swift */; };
 		B87EC45E23E22E130066AEC0 /* ViewControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87EC45D23E22E130066AEC0 /* ViewControllerCoordinator.swift */; };
 		B8871E1923E5AEF20006F69C /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8871E1823E5AEF20006F69C /* CoordinatorType.swift */; };
@@ -50,6 +53,9 @@
 		B879D0F2240719EA009C446E /* CoordinatorRetainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorRetainTests.swift; sourceTree = "<group>"; };
 		B879D0FB24071EA3009C446E /* ViewModelledViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelledViewControllerType.swift; sourceTree = "<group>"; };
 		B879D0FF24072259009C446E /* ViewModelledViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelledViewControllerMock.swift; sourceTree = "<group>"; };
+		B87C34B8240D9E0400C04C94 /* NotificationPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPath.swift; sourceTree = "<group>"; };
+		B87C34BA240D9EF700C04C94 /* CoordinatorIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorIdentifier.swift; sourceTree = "<group>"; };
+		B87C34BE241447D000C04C94 /* AppCoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorType.swift; sourceTree = "<group>"; };
 		B87EC45A23E22D410066AEC0 /* DelegatingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatingCoordinator.swift; sourceTree = "<group>"; };
 		B87EC45D23E22E130066AEC0 /* ViewControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCoordinator.swift; sourceTree = "<group>"; };
 		B8871E1823E5AEF20006F69C /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
@@ -104,6 +110,14 @@
 				B879D0FB24071EA3009C446E /* ViewModelledViewControllerType.swift */,
 			);
 			path = Types;
+			sourceTree = "<group>";
+		};
+		B87C34B7240D9DF300C04C94 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				B87C34B8240D9E0400C04C94 /* NotificationPath.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		B87EC45C23E22DB00066AEC0 /* SpecificCoordinators */ = {
@@ -175,6 +189,7 @@
 		B8DF10A923B26BD600FB8031 /* DDCoordinators */ = {
 			isa = PBXGroup;
 			children = (
+				B87C34B7240D9DF300C04C94 /* Notifications */,
 				B870692F23F84DBE00FFD8BB /* Types */,
 				B87EC45C23E22DB00066AEC0 /* SpecificCoordinators */,
 				B8DF10AA23B26BD600FB8031 /* DDCoordinators.h */,
@@ -185,6 +200,8 @@
 				B8DF10AB23B26BD600FB8031 /* Info.plist */,
 				B8871E1823E5AEF20006F69C /* CoordinatorType.swift */,
 				B88F1C812402E9E500EDB090 /* NoNavBarTabController.swift */,
+				B87C34BA240D9EF700C04C94 /* CoordinatorIdentifier.swift */,
+				B87C34BE241447D000C04C94 /* AppCoordinatorType.swift */,
 			);
 			path = DDCoordinators;
 			sourceTree = "<group>";
@@ -322,11 +339,14 @@
 				B8AD1E442402D22900627400 /* TabCoordinator.swift in Sources */,
 				B8A3343423F88C09009609F8 /* ViewModelledViewControllerCoordinator.swift in Sources */,
 				B897960823C10D340040ED99 /* Coordinator.swift in Sources */,
+				B87C34BF241447D000C04C94 /* AppCoordinatorType.swift in Sources */,
 				B897965223C2371E0040ED99 /* ViewModelledViewController.swift in Sources */,
 				B897960623C10D340040ED99 /* ErroringCoordinator.swift in Sources */,
 				B87EC45E23E22E130066AEC0 /* ViewControllerCoordinator.swift in Sources */,
+				B87C34BB240D9EF700C04C94 /* CoordinatorIdentifier.swift in Sources */,
 				B897960723C10D340040ED99 /* CoordinatorPresentationStrategy.swift in Sources */,
 				B87EC45B23E22D410066AEC0 /* DelegatingCoordinator.swift in Sources */,
+				B87C34B9240D9E0400C04C94 /* NotificationPath.swift in Sources */,
 				B879D0FC24071EA3009C446E /* ViewModelledViewControllerType.swift in Sources */,
 				B870693123F84DCC00FFD8BB /* UIKitTypes.swift in Sources */,
 				B8871E1923E5AEF20006F69C /* CoordinatorType.swift in Sources */,
