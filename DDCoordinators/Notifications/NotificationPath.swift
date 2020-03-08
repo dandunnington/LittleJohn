@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public struct NotificationPath {
     
@@ -25,6 +26,7 @@ public struct NotificationPath {
             throw NotificationParseError.invalidNotificationPath
         }
         self.items = try itemJsons.map { try Item(fromJSON: $0) }
+        
     }
     
     // MARK: - Supporting Structures
@@ -37,22 +39,53 @@ public struct NotificationPath {
             guard let id = json["id"] as? String else {
                 throw NotificationParseError.itemJSONInvalid
             }
-            guard let presentStr = json["present"] as? String, let present = PresentationStyle(rawValue: presentStr) else {
+            guard let presentStr = json["present"] as? String else {
                 throw NotificationParseError.itemJSONInvalid
             }
+            
+            if presentStr == "push" {
+                presentationStyle = .push
+            } else if presentStr == "present" {
+                if let styleStr = json["presentStyle"] as? String {
+                    presentationStyle = .present(style: NotificationPath.Item.getModalPresentationStyleFrom(string: styleStr) ?? .automatic)
+                } else {
+                    presentationStyle = .present(style: .automatic)
+                }
+                
+            } else {
+                throw NotificationParseError.itemJSONInvalid
+            }
+            
             guard let inputData = json["data"] as? [String: Any] else {
                 throw NotificationParseError.itemJSONInvalid
             }
             self.coordinator = CoordinatorIdentifier(name: id)
-            self.presentationStyle = present
             self.inputData = inputData
+        }
+        
+        private static func getModalPresentationStyleFrom(string: String) -> UIModalPresentationStyle? {
+            
+            switch string {
+            case "automatic": return .automatic
+            case "none": return UIModalPresentationStyle.none
+            case "fullScreen": return .fullScreen
+            case "pageSheet": return .pageSheet
+            case "formSheet": return .formSheet
+            case "currentContext": return .currentContext
+            case "custom": return .custom
+            case "overFullScreen": return .overFullScreen
+            case "overCurrentContext": return .overCurrentContext
+            case "popover": return .popover
+            default: return nil
+            }
+            
         }
         
     }
     
-    public enum PresentationStyle: String, Decodable {
+    public enum PresentationStyle {
         case push
-        case present
+        case present(style: UIModalPresentationStyle)
     }
 }
 

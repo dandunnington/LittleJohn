@@ -21,7 +21,7 @@ public enum CoordinatorPresentingStrategy {
     
     case pushFromCoordinator(_: CoordinatorType)
     
-    case presentFromCoordinator(_: CoordinatorType)
+    case presentFromCoordinator(_: CoordinatorModalConfiguration)
     
     case tab
     
@@ -60,6 +60,16 @@ public enum CoordinatorPresentingStrategy {
             return controller
         }
     }
+}
+
+public struct CoordinatorModalConfiguration {
+        
+    public let presentingCoordinator: CoordinatorType
+    
+    public let presentationStyle: UIModalPresentationStyle
+    
+    public let transitionStyle: UIModalTransitionStyle
+    
 }
 
 internal enum CoordinatorEndingStrategy {

@@ -32,11 +32,17 @@ open class ViewControllerCoordinator<DataOutput>: Coordinator<DataOutput> {
         case .present(modalConfig: let config):
             strongNavController.pushViewControllerType(viewController, animated: false)
             config.presentingController.present(config.configureForPresentation(controller: strongNavController), animated: animated)
-        case .presentFromCoordinator(let coordiantor):
-            guard let navController = coordiantor.navigationController else { return }
-            navController.pushViewControllerType(viewController, animated: false)
-            strongNavController.present(navController, animated: animated)
-        case .none: break
+        case .presentFromCoordinator(let config):
+            
+            guard let parentNavController = config.presentingCoordinator.navigationController else { return }
+            strongNavController.modalTransitionStyle = config.transitionStyle
+            strongNavController.modalPresentationStyle = config.presentationStyle
+            strongNavController.definesPresentationContext = true
+            strongNavController.pushViewControllerType(viewController, animated: false)
+            parentNavController.present(strongNavController, animated: animated)
+            
+        case .none:
+            break
         }
 
         self.initialViewController = viewController

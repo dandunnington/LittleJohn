@@ -31,6 +31,10 @@ public extension AppCoordinatorType {
     
     func action(notificationPath: NotificationPath, usingRegister register: NotficationCoordinatorRegister = .shared) throws {
         
+        // pop to the root view controller of the navigation stack and dismiss presented controller
+        self.navigationController?.popToRootViewControllerType(animated: false)
+        self.navigationController?.presentedViewControllerType?.dismiss(animated: false)
+        
         // store all coordinators in array before starting to verify that the sequence is parsable
         var currentCoordinator = notificationPath.initialCoordinator
         var coordinators: [CoordinatorType] = []
@@ -40,8 +44,12 @@ public extension AppCoordinatorType {
             switch item.presentationStyle {
             case .push:
                 presentingStrategy = .pushFromCoordinator(currentCoordinator)
-            case .present:
-                presentingStrategy = .presentFromCoordinator(currentCoordinator)
+            case .present(let style):
+                presentingStrategy = .presentFromCoordinator(CoordinatorModalConfiguration(
+                    presentingCoordinator: currentCoordinator,
+                    presentationStyle: style,
+                    transitionStyle: .coverVertical) // transition style not actually used
+                )
             }
             
             guard let coordinatorType = register.coordinatorFor(identifer: item.coordinator) else {

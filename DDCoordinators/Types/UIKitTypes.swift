@@ -21,6 +21,8 @@ public protocol UINavigationControllerType: UIViewControllerType {
     @discardableResult
     func popToViewControllerType(_ viewController: UIViewControllerType, animated: Bool) -> [UIViewController]?
 
+    @discardableResult
+    func popToRootViewControllerType(animated: Bool) -> [UIViewControllerType]?
 }
 
 /**
@@ -37,6 +39,8 @@ public protocol UIViewControllerType: class {
     func present(_ viewControllerToPresent: UIViewControllerType, animated: Bool, completion: (() -> Void)?)
     
     var navigationControllerType: UINavigationControllerType? { get }
+    
+    var presentedViewControllerType: UIViewControllerType? { get }
     
     func dismiss(animated: Bool, completion: (() -> Void)?)
     
@@ -68,9 +72,17 @@ extension UINavigationController: UINavigationControllerType {
     public func popToViewControllerType(_ viewController: UIViewControllerType, animated: Bool) -> [UIViewController]? {
         return popToViewController(viewController as! UIViewController, animated: animated)
     }
+    
+    public func popToRootViewControllerType(animated: Bool) -> [UIViewControllerType]? {
+        return self.popToRootViewController(animated: animated)
+    }
 }
 
 extension UIViewController: UIViewControllerType {
+    
+    public var presentedViewControllerType: UIViewControllerType? {
+        return self.presentedViewController
+    }
     
     public func present(_ viewControllerToPresent: UIViewControllerType, animated: Bool, completion: (() -> Void)?) {
         
