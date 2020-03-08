@@ -21,23 +21,13 @@ public enum CoordinatorPresentingStrategy {
     
     case pushFromCoordinator(_: CoordinatorType)
     
-    case tab
+    case presentFromCoordinator(_: CoordinatorType)
     
-    init(presentedByParent parent: CoordinatorType, transitionStyle: UIModalTransitionStyle, presentationStyle: UIModalPresentationStyle) {
-        
-        guard let presentingController = parent.navigationController else {
-            fatalError("Tried to present view controller on top of coordinators non-existent navigation controller")
-        }
-        
-        self = .present(modalConfig: CoordinatorPresentingStrategy.ModalConfiguration(
-            presentingController: presentingController,
-            presentationStyle: presentationStyle, transitionStyle: transitionStyle)
-        )
-    }
+    case tab
     
     internal var endingStrategy: CoordinatorEndingStrategy {
         switch self {
-        case .present:
+        case .present, .presentFromCoordinator:
             return .dismiss
         case .pushNavigationController, .pushFromCoordinator:
             return .pop

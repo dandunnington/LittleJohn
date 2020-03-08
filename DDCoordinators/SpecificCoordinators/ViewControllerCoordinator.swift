@@ -32,6 +32,10 @@ open class ViewControllerCoordinator<DataOutput>: Coordinator<DataOutput> {
         case .present(modalConfig: let config):
             strongNavController.pushViewControllerType(viewController, animated: false)
             config.presentingController.present(config.configureForPresentation(controller: strongNavController), animated: animated)
+        case .presentFromCoordinator(let coordiantor):
+            guard let navController = coordiantor.navigationController else { return }
+            navController.pushViewControllerType(viewController, animated: false)
+            strongNavController.present(navController, animated: animated)
         case .none: break
         }
 

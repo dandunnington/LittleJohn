@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NotificationPath {
+public struct NotificationPath {
     
     let identifier: String?
     
@@ -28,13 +28,15 @@ struct NotificationPath {
     }
     
     // MARK: - Supporting Structures
-    struct Item {
+    public struct Item {
         let coordinator: CoordinatorIdentifier
         let presentationStyle: PresentationStyle
         let inputData: [String: Any]
         
         init(fromJSON json: [String: Any]) throws {
-            guard let id = json["identifier"] as? String else { throw NotificationParseError.itemJSONInvalid }
+            guard let id = json["id"] as? String else {
+                throw NotificationParseError.itemJSONInvalid
+            }
             guard let presentStr = json["present"] as? String, let present = PresentationStyle(rawValue: presentStr) else {
                 throw NotificationParseError.itemJSONInvalid
             }
@@ -48,20 +50,20 @@ struct NotificationPath {
         
     }
     
-    enum PresentationStyle: String, Decodable {
+    public enum PresentationStyle: String, Decodable {
         case push
         case present
     }
 }
 
-enum NotificationParseError: Error {
+public enum NotificationParseError: String, Error {
     case idNotRegistered
     case invalidInputData
     case itemJSONInvalid
     case invalidNotificationPath
 }
 
-struct NotficationCoordinatorRegister {
+public struct NotficationCoordinatorRegister {
     
     // MARK: - Public Interface
     public mutating func register(_ coordinator: NotificationEnabledCoordinator.Type, forIdentifier id: CoordinatorIdentifier) {
@@ -81,6 +83,6 @@ struct NotficationCoordinatorRegister {
 }
 
 
-protocol NotificationEnabledCoordinator: CoordinatorType {
+public protocol NotificationEnabledCoordinator: CoordinatorType {
     init?(data: [String: Any], presentationStrategy: CoordinatorPresentingStrategy)
 }

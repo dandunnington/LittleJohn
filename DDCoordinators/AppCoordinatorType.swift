@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-protocol AppCoordinatorType: CoordinatorType { }
+public protocol AppCoordinatorType: CoordinatorType { }
 
-extension AppCoordinatorType {
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+public extension AppCoordinatorType {
+    func performNotificationRoute(userInfo: [AnyHashable: Any]) {
         
         guard let pathJSON = userInfo["coordinatorPath"] as? [String: Any] else { return }
         
@@ -27,7 +27,7 @@ extension AppCoordinatorType {
 }
 
 // MARK: - Coordinator Functions
-extension AppCoordinatorType {
+public extension AppCoordinatorType {
     
     func action(notificationPath: NotificationPath, usingRegister register: NotficationCoordinatorRegister = .shared) throws {
         
@@ -41,9 +41,7 @@ extension AppCoordinatorType {
             case .push:
                 presentingStrategy = .pushFromCoordinator(currentCoordinator)
             case .present:
-                presentingStrategy = .init(presentedByParent: currentCoordinator,
-                                           transitionStyle: .flipHorizontal,
-                                           presentationStyle: .popover)
+                presentingStrategy = .presentFromCoordinator(currentCoordinator)
             }
             
             guard let coordinatorType = register.coordinatorFor(identifer: item.coordinator) else {

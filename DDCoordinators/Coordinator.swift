@@ -155,7 +155,7 @@ open class Coordinator<DataOutput>: NSObject, CoordinatorType {
         // create navigation controller
         var navigationController: UINavigationControllerType
         switch presentingStrategy {
-        case .present, .tab, .none:
+        case .present, .tab, .none, .presentFromCoordinator:
             navigationController = createNavController()
         case .pushNavigationController(navigationController: let navController):
             navigationController = navController

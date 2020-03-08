@@ -25,6 +25,7 @@ public protocol CoordinatorType: AnyObject {
     var _strongNavigationController: UINavigationControllerType? { get }
     
     func deallocateStrongNavController()
+    
 }
 
 extension CoordinatorType {

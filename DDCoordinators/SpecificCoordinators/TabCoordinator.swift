@@ -58,6 +58,10 @@ open class TabCoordinator: Coordinator<NoReturn> {
         }
     }
     
+    override public var rootViewController: UIViewControllerType? {
+        return tabBarController
+    }
+    
     // MARK: - Private Interface
     private weak var tabBarController: UITabBarControllerType?
     

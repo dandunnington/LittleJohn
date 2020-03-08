@@ -10,9 +10,9 @@ import Foundation
 
 public struct CoordinatorIdentifier: Decodable, Hashable {
     
-    let name: String
+    public let name: String
     
-    init(name: String) {
+    public init(name: String) {
         self.name = name
     }
     
