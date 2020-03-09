@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+ Represents a sequence of coordinators that the app will route to
+ */
 public struct NotificationPath {
     
     let identifier: String?
@@ -99,8 +102,8 @@ public enum NotificationParseError: String, Error {
 public struct NotficationCoordinatorRegister {
     
     // MARK: - Public Interface
-    public mutating func register(_ coordinator: NotificationEnabledCoordinator.Type, forIdentifier id: CoordinatorIdentifier) {
-        items[id] = coordinator
+    public mutating func register(_ coordinator: NotificationEnabledCoordinator.Type) {
+        items[coordinator.identifier] = coordinator
     }
     
     public static var shared = NotficationCoordinatorRegister()
@@ -117,5 +120,21 @@ public struct NotficationCoordinatorRegister {
 
 
 public protocol NotificationEnabledCoordinator: CoordinatorType {
+    
     init?(data: [String: Any], presentationStrategy: CoordinatorPresentingStrategy)
+    
+    static var identifier: CoordinatorIdentifier { get }
+    
+}
+
+extension NotificationEnabledCoordinator {
+    static var identifier: CoordinatorIdentifier {
+        
+        var string = String(describing: self)
+        string = string.replacingOccurrences(of: "Coordinator", with: "")
+        
+        let firstLetter = string.dropFirst()
+        string = firstLetter.lowercased() + string
+        return CoordinatorIdentifier(name: string)
+    }
 }
