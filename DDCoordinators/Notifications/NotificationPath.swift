@@ -99,10 +99,10 @@ public enum NotificationParseError: String, Error {
     case invalidNotificationPath
 }
 
-public struct NotficationCoordinatorRegister {
+public class NotficationCoordinatorRegister {
     
     // MARK: - Public Interface
-    public mutating func register(_ coordinator: NotificationEnabledCoordinator.Type, identifier: CoordinatorIdentifier? = nil) {
+    public func register(_ coordinator: NotificationEnabledCoordinator.Type, identifier: CoordinatorIdentifier? = nil) {
         items[identifier ?? coordinator.identifier] = coordinator
     }
     
