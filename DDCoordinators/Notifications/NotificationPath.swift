@@ -102,8 +102,8 @@ public enum NotificationParseError: String, Error {
 public struct NotficationCoordinatorRegister {
     
     // MARK: - Public Interface
-    public mutating func register(_ coordinator: NotificationEnabledCoordinator.Type) {
-        items[coordinator.identifier] = coordinator
+    public mutating func register(_ coordinator: NotificationEnabledCoordinator.Type, identifier: CoordinatorIdentifier? = nil) {
+        items[identifier ?? coordinator.identifier] = coordinator
     }
     
     public static var shared = NotficationCoordinatorRegister()

@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-public protocol AppCoordinatorType: CoordinatorType { }
+public protocol AppCoordinatorType: CoordinatorType {
+    func registerNotificationEnabledCoordinators(container: NotficationCoordinatorRegister)
+}
 
 public extension AppCoordinatorType {
     func performNotificationRoute(userInfo: [AnyHashable: Any]) {
@@ -22,29 +24,6 @@ public extension AppCoordinatorType {
         } catch {
             print(error.localizedDescription)
         }
-        
-    }
-    
-    func registerNotificationClasses()
-    {
-        let expectedClassCount = objc_getClassList(nil, 0)
-        let allClasses = UnsafeMutablePointer<AnyClass?>.allocate(capacity: Int(expectedClassCount))
-
-        let autoreleasingAllClasses = AutoreleasingUnsafeMutablePointer<AnyClass>(allClasses)
-        let actualClassCount: Int32 = objc_getClassList(autoreleasingAllClasses, expectedClassCount)
-
-        var classes = [AnyClass]()
-        for i in 0 ..< actualClassCount {
-            if let currentClass: AnyClass = allClasses[Int(i)] {
-                classes.append(currentClass)
-            }
-        }
-        allClasses.deallocate()
-        
-        for coordiantor in classes.compactMap({ $0 as? NotificationEnabledCoordinator.Type }) {
-            NotficationCoordinatorRegister.shared.register(coordiantor)
-        }
-        
         
     }
 }

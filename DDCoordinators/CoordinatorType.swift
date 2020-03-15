@@ -28,7 +28,7 @@ public protocol CoordinatorType: AnyObject {
     
 }
 
-extension CoordinatorType {
+public extension CoordinatorType {
     var navigationController: UINavigationControllerType? {
         return rootViewController?.navigationControllerType
     }
